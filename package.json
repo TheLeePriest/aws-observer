@@ -1,0 +1,67 @@
+{
+  "name": "aws-call-logger-middleware",
+  "version": "1.0.1-0",
+  "description": "A Middy middleware that logs AWS SDK calls",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "test": "jest",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint && npm run build",
+    "publish": "npm publish",
+    "version": "npm version",
+    "lint": "eslint 'src/**/*.ts'",
+    "lint:fix": "eslint --fix 'src/**/*.ts'",
+    "prettier": "prettier --write 'src/**/*.ts'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheLeePriest/aws-observer"
+  },
+  "keywords": [
+    "aws",
+    "middy",
+    "middleware",
+    "sdk",
+    "logging"
+  ],
+  "author": "Lee Priest <lee@leepriest.dev>",
+  "license": "MIT",
+  "dependencies": {
+    "@aws-sdk/types": "^3.310.0",
+    "@middy/core": "^4.4.0",
+    "@middy/util": "^4.4.0",
+    "aws-sdk": "^2.1370.0"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-s3": "^3.325.0",
+    "@babel/core": "^7.21.8",
+    "@babel/eslint-parser": "^7.21.8",
+    "@middy/http-json-body-parser": "^4.4.0",
+    "@types/aws-lambda": "^8.10.114",
+    "@types/jest": "^29.5.1",
+    "@types/node": "^18.16.3",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
+    "eslint": "^8.39.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jest": "^27.2.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "jest": "^29.5.0",
+    "prettier": "^2.8.8",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}
